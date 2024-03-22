@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>
+				Coding Challenge 6
+			</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<style>
+				body {
+					background-color: lightseagreen;
+				}
+           
+			</style>
+		</head>
+		<body>
+			<h1> Quadratic Formula </h1>
+
+			<button onclick="solve()">Find the root</button>
+
+			<h4 id="result"></h4>
+
+			<script>
+				
+				function solve(){
+				
+					var a = parseInt(prompt("Enter the value of a: "))
+					var b = parseInt(prompt("Enter the value of b: "))
+					var c = parseInt(prompt("Enter the value of c: "))
+					
+					var discriminant = b*b-4*a*c;
+					
+					var x1;
+					var x2;
+					
+					if (discriminant == 0) {
+					
+						let x1 = x2;
+						
+						document.getElementById("result").innerHTML = "The values of both x1 and x2 are both the same.";
+					}
+					
+					if (discriminant > 0) {
+					
+						let x1 = (b*-1 + Math.sqrt((b*b)-4*a*c))/ 2*a;
+						let x2 = (b*-1 - Math.sqrt((b*b)-4*a*c))/ 2*a;
+						
+						document.getElementById("result").innerHTML = "The values of x1 is: " + x1 + " and the value of x2 is: " + x2;
+					
+					}
+					
+					if (discriminant < 0) {
+					
+						document.getElementById("result").innerHTML = "The values of both x1 and x2 are both imaginary.";
+					
+					}
+				}
+				
+				
+			</script>
+		</body>
+	</html>
